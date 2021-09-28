@@ -1,5 +1,8 @@
-b=20000 # start amount
-t=5*12 # date in months
-a=0.15/12 # % per month
-total_amount=b*((1+a)**t)
-print('Итоговая сумма составит',round(total_amount, 2),'рублей.')
+t=input('Please input for how many months you want to open a deposit:\n')
+print('you entered',t)
+b=input('Please input the initial amount:\n')
+print('you entered',b)
+n=input('Please input the year rate, %:\n')
+print('you entered',n)
+total_amount=int(b)*((1+(int(n)/100)/12)**int(t))
+print('Total amount will be',round(total_amount, 2),'rubles')
