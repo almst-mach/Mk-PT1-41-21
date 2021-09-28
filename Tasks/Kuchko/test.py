@@ -13,4 +13,4 @@ b = int(input("Введите срок: "))
 c = float(input("Введите процент: "))
 # ежемесячная капитализация
 summa = a * ((1 + (c/100)/12))**(b*12)
-print(summa)
+print(round(summa, 2))
