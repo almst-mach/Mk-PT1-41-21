@@ -11,3 +11,5 @@ interest_income = decimal.Decimal(amount_of_money - initial_amount)
 
 print("Сумма вклада с процентами:", amount_of_money.quantize(decimal.Decimal("1.00")))
 print("Процентный доход составит:", interest_income.quantize(decimal.Decimal("1.00")))
+
+
