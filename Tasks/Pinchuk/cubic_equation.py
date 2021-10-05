@@ -5,16 +5,16 @@ B = int(input('Введите коэфициент B:'))
 C = int(input('Введите коэфициент C:'))
 D = int(input('Введите коэфициент D:'))
 
-S = (4 * (3*A*C - B**2)**3 + (2*B**3 - 9*A*B*C + 27*A**2 * D)**2)/(2916*A**6)
-p = (3*A*C - B**2)/(3*A**2)
-q = (2*B**3 - 9*A*B*C + 27*A**2*D)/(27*A**3)
+S = (4 * (3 * A * C - B ** 2) ** 3 + (2 * B ** 3 - 9 * A * B * C + 27 * A ** 2 * D) ** 2) / (2916 * A ** 6)
+p = (3 * A * C - B ** 2) / (3 * A ** 2)
+q = (2 * B ** 3 - 9 * A * B * C + 27 * A ** 2 * D) / (27 * A ** 3)
 
 
 if S < 0:
     if q < 0:
-        F = math.atan((math.sqrt(-(q**2/4+p**3/27)))/(-q/2))
+        F = math.atan((math.sqrt( -(q ** 2 / 4 + p ** 3 / 27))) / (-q / 2))
     elif q > 0:
-        F = math.atan((math.sqrt(-(q ** 2 / 4 + p ** 3 / 27))) / (-q / 2)) + math.pi
+        F = math.atan((math.sqrt( -(q ** 2 / 4 + p ** 3 / 27))) / (-q / 2)) + math.pi
     elif q == 0:
         F = math.pi/2
     x1 = 2 * math.sqrt(-p / 3) * math.cos(F / 3) - B / (3 * A)
