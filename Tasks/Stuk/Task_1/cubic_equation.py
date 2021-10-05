@@ -50,25 +50,25 @@ elif param_S < 0:
     if param_Q > 0:
         param_fi = math.acosh(abs(param_R) / math.sqrt(param_Q**3)) / 3
         x_1 = -2 * sgn(param_R) * math.sqrt(param_Q) * math.cosh(param_fi) - (param_a / 3)
-        x_2 = complex(sgn(param_R) * math.sqrt(param_Q) * math.cosh(param_fi) - (param_a / 3), 
-                      math.sqrt(3) * math.sqrt(param_Q) * math.sinh(param_fi))
-        x_3 = complex(sgn(param_R) * math.sqrt(param_Q) * math.cosh(param_fi) - (param_a / 3), 
-                      -math.sqrt(3) * math.sqrt(param_Q) * math.sinh(param_fi))
+        x_2 = complex(round(sgn(param_R) * math.sqrt(param_Q) * math.cosh(param_fi) - (param_a / 3), 3), 
+                      round(math.sqrt(3) * math.sqrt(param_Q) * math.sinh(param_fi), 3))
+        x_3 = complex(round(sgn(param_R) * math.sqrt(param_Q) * math.cosh(param_fi) - (param_a / 3), 3), 
+                      round(-math.sqrt(3) * math.sqrt(param_Q) * math.sinh(param_fi), 3))
         print(f"Корни уравнения:\nx_1 = {round(x_1, 3)}\nx_2 = {x_2}\nx_3 = {x_3}")
     elif param_Q < 0:
         param_fi = math.asinh(abs(param_R) / math.sqrt(abs(param_Q)**3)) / 3
         x_1 = -2 * sgn(param_R) * math.sqrt(abs(param_Q)) * math.sinh(param_fi) - (param_a / 3)
-        x_2 = complex(sgn(param_R) * math.sqrt(abs(param_Q)) * math.sinh(param_fi) - (param_a / 3), 
-                      math.sqrt(3) * math.sqrt(abs(param_Q)) * math.cosh(param_fi))
-        x_3 = complex(sgn(param_R) * math.sqrt(abs(param_Q)) * math.sinh(param_fi) - (param_a / 3), 
-                      -math.sqrt(3) * math.sqrt(abs(param_Q)) * math.cosh(param_fi))
+        x_2 = complex(round(sgn(param_R) * math.sqrt(abs(param_Q)) * math.sinh(param_fi) - (param_a / 3), 3), 
+                      round(math.sqrt(3) * math.sqrt(abs(param_Q)) * math.cosh(param_fi), 3))
+        x_3 = complex(round(sgn(param_R) * math.sqrt(abs(param_Q)) * math.sinh(param_fi) - (param_a / 3), 3), 
+                      round(-math.sqrt(3) * math.sqrt(abs(param_Q)) * math.cosh(param_fi), 3))
         print(f"Корни уравнения:\nx_1 = {round(x_1, 3)}\nx_2 = {x_2}\nx_3 = {x_3}")
     else:
         x_1 = -(param_c - (param_a**3 / 27))**(1/3) - (param_a / 3)
-        x_2 = complex(-(param_a + x_1) / 2,
-                      math.sqrt(abs((param_a - 3*x_1) * (param_a + x_1) - 4*param_b)) / 2)
-        x_3 = complex(-(param_a + x_1) / 2,
-                      -math.sqrt(abs((param_a - 3*x_1) * (param_a + x_1) - 4*param_b)) / 2)
+        x_2 = complex(round(-(param_a + x_1) / 2, 3),
+                      round(math.sqrt(abs((param_a - 3*x_1) * (param_a + x_1) - 4*param_b)) / 2, 3))
+        x_3 = complex(round(-(param_a + x_1) / 2, 3),
+                      round(-math.sqrt(abs((param_a - 3*x_1) * (param_a + x_1) - 4*param_b)) / 2, 3))
         print(f"Корни уравнения:\nx_1 = {round(x_1, 3)}\nx_2 = {x_2}\nx_3 = {x_3}")
 else:
     x_1 = -2 * param_R**(1/3) - (param_a / 3)
