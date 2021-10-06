@@ -1,0 +1,6 @@
+print ('Deposit with monthly capitalization')
+P = input ('Initial deposit in rubles:')
+N = input ('Annual percentage rate:')
+T = input ('Term of the contract in years:')
+D = int(P)*(1+int(N)/100/12)**(int(T)*12)
+print ('Total income:', round (D, 2), 'BYN')
