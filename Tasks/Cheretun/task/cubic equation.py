@@ -1,4 +1,4 @@
-from math import *
+from math import acos, sqrt, cos, pi, acosh, cosh, sinh, asinh
 
 a, b, c, d = [int(i) for i in input().split()]
 R_1 = 0
