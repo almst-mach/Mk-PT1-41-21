@@ -1,0 +1,6 @@
+print("Решение уравнения вида y=kx+b")
+eq = input("Введите правую часть уравнения y=")
+x = input('Введите x:')
+coeff = eq.split('x')
+res = int(coeff[0])*int(x) + int(coeff[1])
+print(res)
