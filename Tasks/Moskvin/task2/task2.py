@@ -1,5 +1,23 @@
 from datetime import datetime
 
+
+def time_in_string_format(minutes, hours):
+    if int(hours) in hour1.keys() and int(minutes) in minutes1.keys():  # if minutes < 30 and 30 < minutes < 45
+        print(f'{minutes1.get(int(minutes))}{hour1.get(int(hours))}')
+
+    elif int(hours) in hour2.keys() and int(minutes) in minutes2.keys():  # if minutes >= 45
+        print(f'{minutes2.get(int(minutes))}{hour2.get((int(hours)))}')
+
+    elif int(hours) == 00 and int(minutes) == 00:  # midnight
+        print('Полночь')
+
+    elif int(minutes) == 30:  # if minutes = 30
+        print(f'Половина {hour1.get(int(hours))}')
+
+    elif int(hours) in hour2.keys() and int(minutes) == 00:  # if minutes = 00
+        print(f'{hour2.get((int(hours) - 1))} ровно')
+
+
 hour1 = {
     0: 'первого ',
     1: 'второго ',
@@ -119,37 +137,17 @@ minutes2 = {
 }
 
 current_time = datetime.now().time().strftime('%H:%M')
+
 minutes = current_time[3:5]
 hours = current_time[0:2]
-print(current_time)
+time_in_string_format(minutes, hours)
 
-if int(minutes) in minutes1.keys() and int(hours) in hour1.keys():
-    print(f'{minutes1.get(int(minutes))}{hour1.get(int(hours))}')
-
-elif int(minutes) in minutes2.keys() and int(hours) in hour2.keys():
-    print(f'{minutes2.get(int(minutes))}{hour2.get((int(hours)))}')
-
-elif int(minutes) == 30:
-    print(f'Половина {hour1.get(int(hours))}')
-
-else:
-    print('Полночь')
-
-random_time = input('Введите время формата (hh:mm): \n')
 try:
+    random_time = input('Введите время формата (hh:mm): \n')
     datetime.strptime(random_time, '%H:%M')
     minutes = random_time[3:5]
     hours = random_time[0:2]
-    if int(minutes) in minutes1.keys() and int(hours) in hour1.keys():
-        print(f'{minutes1.get(int(minutes))}{hour1.get(int(hours))}')
+    time_in_string_format(minutes, hours)
 
-    elif int(minutes) in minutes2.keys() and int(hours) in hour2.keys():
-        print(f'{minutes2.get(int(minutes))}{hour2.get((int(hours)))}')
-
-    elif int(minutes) == 30:
-        print(f'Половина {hour1.get(int(hours))}')
-
-    else:
-        print('Полночь')
 except ValueError:
     print('Incorrect Format')
