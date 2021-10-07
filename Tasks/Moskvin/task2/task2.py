@@ -1,16 +1,5 @@
 from datetime import datetime
 
-a = datetime.now().time().strftime('%H:%M')
-print(a)
-b = input('Введите время формата (hh:mm): \n')
-try:
-    datetime.strptime(b, '%H:%M')
-    print(b)
-except ValueError:
-    print('Incorrect Format')
-minutes = a[3:5]
-hours = a[0:2]
-
 hour1 = {
     0: 'первого ',
     1: 'второго ',
@@ -128,6 +117,12 @@ minutes2 = {
     58: 'без двух ',
     59: 'без одной минуты ',
 }
+
+current_time = datetime.now().time().strftime('%H:%M')
+minutes = current_time[3:5]
+hours = current_time[0:2]
+print(current_time)
+
 if int(minutes) in minutes1.keys() and int(hours) in hour1.keys():
     print(f'{minutes1.get(int(minutes))}{hour1.get(int(hours))}')
 
@@ -139,3 +134,22 @@ elif int(minutes) == 30:
 
 else:
     print('Полночь')
+
+random_time = input('Введите время формата (hh:mm): \n')
+try:
+    datetime.strptime(random_time, '%H:%M')
+    minutes = random_time[3:5]
+    hours = random_time[0:2]
+    if int(minutes) in minutes1.keys() and int(hours) in hour1.keys():
+        print(f'{minutes1.get(int(minutes))}{hour1.get(int(hours))}')
+
+    elif int(minutes) in minutes2.keys() and int(hours) in hour2.keys():
+        print(f'{minutes2.get(int(minutes))}{hour2.get((int(hours)))}')
+
+    elif int(minutes) == 30:
+        print(f'Половина {hour1.get(int(hours))}')
+
+    else:
+        print('Полночь')
+except ValueError:
+    print('Incorrect Format')
