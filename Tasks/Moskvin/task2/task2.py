@@ -18,6 +18,10 @@ def time_in_string_format(minutes, hours):
         print(f'{hour2.get((int(hours) - 1))} ровно')
 
 
+'''
+changes the numeric time value to text
+'''
+
 hour1 = {
     0: 'первого ',
     1: 'второго ',
