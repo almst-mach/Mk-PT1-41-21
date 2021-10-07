@@ -23,8 +23,7 @@ if V==1:
     a = datetime.now().strftime('%H:%M').split(':')
     main()
 elif V==2:
-    a = input('\nВведите время в фармате 24ч.  HH:MM\n')
-    a = a.split(':')
+    a = input('\nВведите время в фармате 24ч.  HH:MM\n').split(':')
     main()
 else :
     print("\nВы ввели не то что-то....\n\n\n")
