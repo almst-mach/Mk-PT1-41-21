@@ -2,6 +2,10 @@ from datetime import datetime
 
 
 def time_in_string_format(minutes, hours):
+    """
+    changes the numeric time value to text
+    """
+
     if int(hours) in hour1.keys() and int(minutes) in minutes1.keys():  # if minutes < 30 and 30 < minutes < 45
         print(f'{minutes1.get(int(minutes))}{hour1.get(int(hours))}')
 
@@ -17,10 +21,6 @@ def time_in_string_format(minutes, hours):
     elif int(hours) in hour2.keys() and int(minutes) == 00:  # if minutes = 00
         print(f'{hour2.get((int(hours) - 1))} ровно')
 
-
-'''
-changes the numeric time value to text
-'''
 
 hour1 = {
     0: 'первого ',
@@ -100,7 +100,7 @@ minutes1 = {
     21: 'двадцать одна минута ',
     22: 'двадцать две минуты ',
     23: 'двадцать три минуты ',
-    24: 'двадцать четре минуты ',
+    24: 'двадцать четыре минуты ',
     25: 'двадцать пять минут ',
     26: 'двадцать шесть минут ',
     27: 'двадцать семь минут ',
