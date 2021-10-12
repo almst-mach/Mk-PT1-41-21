@@ -17,11 +17,37 @@ for x in listed_str:
 print("\n\n\n")
 print(chisla_v_chislax)
 print("\n\n\n")
-x=0
-for x in range(len(chisla_v_chislax)):
+
+for i in range(len(chisla_v_chislax)-1):
+    k = i
+    t = i+1
+    while t < len(chisla_v_chislax):
+        if chisla_v_chislax[k]>=chisla_v_chislax[t]:
+            k = t
+        t += 1
+    chisla_v_chislax[i], chisla_v_chislax[k] = chisla_v_chislax[k], chisla_v_chislax[i]
+
+print(chisla_v_chislax)
+print("\n\n\n")
+
+result_oper_with_chisla=[]
+op=0
+for i in range(len(chisla_v_chislax)-1):
    
-    if chisla_v_chislax[x]<chisla_v_chislax[x-1]:
-        print(chisla_v_chislax[x])
-        x+=1
-    else: print(chisla_v_chislax[x-1])
-    x+=1
+    if op%2==0:
+        result_oper_with_chisla.append(chisla_v_chislax[i]+chisla_v_chislax[i+1])
+        op+=1
+    elif op%2!=0:   
+        result_oper_with_chisla.append(chisla_v_chislax[i]*chisla_v_chislax[i+1]) 
+        op+=1
+    
+print(result_oper_with_chisla)
+print("\n\n\n")
+
+result_oper_with_nechet_chisla=0
+for i in range(len(chisla_v_chislax)-1):
+   if chisla_v_chislax[i]%2==1:
+        result_oper_with_nechet_chisla=result_oper_with_nechet_chisla+chisla_v_chislax[i]
+    
+    
+print(result_oper_with_nechet_chisla)
