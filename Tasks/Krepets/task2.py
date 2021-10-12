@@ -13,7 +13,7 @@ def main():
         print(minutes_more_45.get(time[1]),hour_more_45.get(time[0]))
     elif int(time[1]) == 30:
         print(minutes_equal_30.get(time[1]), hour_less_30_45.get(time[0]))
-    elif int(time[1]) == 0 and int(time[0]) == 00:
+    elif int(time[1]) == 00 and int(time[0]) == 00:
         print('полночь')
     elif int(time[1]) == 00:
         print(hour_00[time[0]],minutes_less_30_45.get(time[1]))
@@ -21,7 +21,7 @@ def main():
 
 
 while True:
-   inp = int(input('1.Автоматический ввод времени\n2.Ввод времени вручную\n3.Выход из программы.\nВведите число: '))
+   inp = int(input('1.Автоматический ввод времени\n2.Ввод времени вручную\nВведите число: '))
    if inp == 1:
        time = f'{current_time.hour}:{current_time.minute}'.split(':')
        main()
