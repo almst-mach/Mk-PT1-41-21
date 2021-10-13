@@ -5,7 +5,6 @@ b = []
 for i in l:
     b.append(a[i])
 print(b)
-print(l)
 
 c = []
 for i in range(len(b)):
