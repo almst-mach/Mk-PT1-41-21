@@ -51,3 +51,5 @@ for i in range(len(chisla_v_chislax)-1):
     
     
 print(result_oper_with_nechet_chisla)
+print("\n\n\n")
+
