@@ -21,12 +21,12 @@ m = []
 for i in range(len(l)-1):
     if i % 2 == 0:
         m.append(l[i]+l[i+1])
-    elif i % 2 != 0:
+    if i % 2 != 0:
         m.append(l[i]*l[i+1])
 print(m)
 
-sum = 0
+s = 0
 for i in range(len(l)):
     if l[i] % 2 != 0:
-        sum = sum+l[i]
-print(sum)
+        s = s+l[i]
+print(s)
