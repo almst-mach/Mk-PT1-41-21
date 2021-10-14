@@ -6,15 +6,16 @@ print(l)
 l = list(set(l))
 print(l)
 
-for i in range(len(l)-1):
-    k = i
-    t = i+1
-    while t < len(l):
-        if l[k] >= l[t]:
-            k = t
-        t += 1
-    l[i], l[k] = l[k], l[i]
-print(l)
+#сортировка, как я понял, уже не нужна:
+#for i in range(len(l)-1):
+#    k = i
+#    t = i+1
+#   while t < len(l):
+#        if l[k] >= l[t]:
+#            k = t
+#        t += 1
+#    l[i], l[k] = l[k], l[i]
+#print(l)
 
 m = []
 for i in range(len(l)-1):
