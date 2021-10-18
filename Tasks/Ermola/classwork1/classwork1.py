@@ -20,9 +20,9 @@ print(l)
 m = []
 for i in range(len(l)-1):
     if i % 2 == 0:
-        m.append(l[i]+l[i+1])
-    if i % 2 != 0:
         m.append(l[i]*l[i+1])
+    if i % 2 != 0:
+        m.append(l[i]+l[i+1])
 print(m)
 
 s = 0
