@@ -29,7 +29,7 @@ print(sum_list)
 print("\n--------------------------------------------------------\n")
 
 # реализация с одной переменной
-a = sorted(list(set([{'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10, 'eleven': 11, 'twelve': 12, 'thirteen': 13, 'fourteen': 14, 'fifteen': 15, 'sixteen': 16, 'seventeen': 17, 'eighteen': 18, 'nineteen': 19, 'twenty': 20}[i] for i in "five thirteen two eleven seventeen two one thirteen ten four eight five nineteen".split(" ")])))
+a = sorted(list(set([{'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10, 'eleven': 11, 'twelve': 12, 'thirteen': 13, 'fourteen': 14, 'fifteen': 15, 'sixteen': 16, 'seventeen': 17, 'eighteen': 18, 'nineteen': 19, 'twenty': 20}[a] for a in "five thirteen two eleven seventeen two one thirteen ten four eight five nineteen".split(" ")])))
 print(a)
 
 print(sum([a for a in a if a%2 !=0]))
