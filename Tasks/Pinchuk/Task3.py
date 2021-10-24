@@ -30,7 +30,7 @@ with open(os.path.join('HomeWork', 'text.txt'), 'r') as f_r, open(os.path.join('
         position += len(line)
         if line == '\n':  # на случай если вдруг в тексте будет разрыв
             continue
-        if line == '':  # выход из цикла в конце файла, но если попадется разрыв то беда
+        if line == '':  # выход из цикла в конце файла
             break
         if line[-1] == '\n':  # блок проверяет является ли эта строка концом абзаца
             p = True
