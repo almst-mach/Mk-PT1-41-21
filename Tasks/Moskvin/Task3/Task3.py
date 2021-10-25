@@ -15,7 +15,7 @@ while upper_bound < len(text):
         list_lines.append(text[lower_bound:upper_bound].strip())
         lower_bound = upper_bound
 list_lines.append(text[-length:].strip())
-
+nf = open('new_text.txt', 'w')
 for i in list_lines:
     i.strip()
     lines_elem = [' ' if j == '\n' else j for j in i]
@@ -26,4 +26,5 @@ for i in list_lines:
             i = i[:space_index]
         except ValueError:
             i = ''.join(lines_elem)
-    print(''.join(lines_elem), len(lines_elem))
+    nf.write(''.join(lines_elem) + '\n')
+nf.close()
