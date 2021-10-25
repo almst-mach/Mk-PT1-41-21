@@ -21,9 +21,13 @@ def add_space(num_spaces, line_list):
     return ' '.join(line_list)
 
 
-with open(os.path.join('HomeWork', 'text.txt'), 'r') as f_r, open(os.path.join('HomeWork', 'w_text.txt'), 'w') as f_w:
+file_name_w = 'w_text.txt'
+with open(os.path.join('HomeWork', 'text.txt'), 'r') as f_r, open(os.path.join('HomeWork', file_name_w), 'w') as f_w:
     position = 0  # переменная контролирует положение курсора
     w_line = int(input('Enter line width:'))
+    while w_line <= 35:
+        print('Your number does not match, please enter a number greater than 35')
+        w_line = int(input('Enter line width:'))
     while True:
         f_r.seek(position)  # переводим курсор в нужную позицию
         line = f_r.readline(w_line + 1)  # читаем на один символ больше указанной ширины,чтобы прочесть следующий символ
@@ -53,3 +57,4 @@ with open(os.path.join('HomeWork', 'text.txt'), 'r') as f_r, open(os.path.join('
             else:
                 line = add_space(number_of_spaces, l_list)  # распределяем пробелы
         f_w.write(line + '\n')
+    print(f'The formatted text is written to the file "{file_name_w}"')
