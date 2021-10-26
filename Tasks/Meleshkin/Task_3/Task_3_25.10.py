@@ -35,17 +35,13 @@ def change(Text):
 
 start = True
 width = int(input('Enter the number more 35: \n '))
-while start:
-    if width > 35:
-        with open('text.txt', 'r', encoding='utf-8') as file:
-            change(file.readlines())
-            add_space()
-        with open('Text_out.txt', 'w', encoding='utf-8') as file_2:
-            for txt in finish_text:
-                file_2.write(txt)
-            print('Ready!')   
-    else:
-        print('Incorrect number ')
-    width = int(input('Enter the number more 35: \nIf you want to exit enter any word or symbol: \n'))
-    if width < 35:
-        start = False
+if width > 35:
+    with open('text.txt', 'r', encoding='utf-8') as file:
+        change(file.readlines())
+        add_space()
+    with open('Text_out.txt', 'w', encoding='utf-8') as file_2:
+        for txt in finish_text:
+            file_2.write(txt)
+        print('Ready!')   
+else:
+    print('Incorrect number ')
