@@ -34,5 +34,7 @@ with open("text.txt", "r", encoding="utf-8") as donor:
                     for j in range(mult_space):
                         l[i] += " "
                 s = " ".join(l)
+            if s=="":
+                continue
             receiver.write(s+"\n")
         receiver.write(s)
