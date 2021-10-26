@@ -18,12 +18,28 @@ for line in file:
             new_file.append(line.rstrip())
             break
 
+add_space = []
+for line in new_file:
+    z = line
+    i = 0
+    for i in range(len(z)):
+        if user_number > len(line):
+            if line[i] == ' ':
+                line = line[:i] + ' ' + line[i:]
+            else:
+                if i == int(len(z)):
+                    add_space.append(line)
+        else:
+            add_space.append(line)
+            break
 
 with open("format_text.txt", 'w+', encoding = "utf-8") as out_file:
-    for txt in new_file:
+    for txt in add_space:
         out_file.write(txt + '\n')
+    
     out_file.seek(0)
     empty = out_file.readlines()
+    
     if empty != '':
         print("Your file was written")
     else:
