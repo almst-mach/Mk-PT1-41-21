@@ -22,7 +22,7 @@ with open(r'C:\python\Mk-PT1-41-21\Tasks\Shavlis\text.txt', 'r', encoding='utf-8
                     break
                 
                 if len(p)+1 + len(t[i+1]) > b:
-                    
+                    p = p.rstrip()
                     d = p.split()
                     c = b - len(p)
                     for i in range(len(p)-1):
