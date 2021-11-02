@@ -17,7 +17,6 @@ while True:
         print('Некорректно введены данные, попробуйте ещё раз!!!')
         continue
 
-
 while True:
     amount = []
 
