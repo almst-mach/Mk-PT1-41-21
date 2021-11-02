@@ -2,6 +2,26 @@ x = []
 p = {}
 res = []
 
+def inputt():
+    try:
+        global p
+        a = int(input('Введите сумму счета: \n'))
+        x.append(a)
+        a = int(input('Введите количество участников: \n'))
+        x.append(a)
+        s_m =  x[0] / x[1]
+        x.append(s_m)
+        s = 0
+        for i in range(0,a):
+            k = 1 + i
+            v=int(input(f"сумму закинул в банк {k} человек:"))
+            p[k]=v
+            s += v
+        if s != x[0]:
+            raise RuntimeError("сумма чека не совпадает с суммами персон")
+    except RuntimeError as error:
+        print(error)
+
 def greedy():
     global x,p,res
     h=True
@@ -35,23 +55,11 @@ def greedy():
                     h=False
                     break
 
-try:
-    a = int(input('Введите сумму счета: \n'))
-    x.append(a)
-    a = int(input('Введите количество участников: \n'))
-    x.append(a)
-    s_m =  x[0] / x[1]
-    x.append(s_m)
-    s = 0
-    for i in range(0,a):
-        k = 1 + i
-        v=int(input(f"сумму закинул в банк {k} человек:"))
-        p[k]=v
-        s += v
-    if s != x[0]:
-        raise RuntimeError("сумма чека не совпадает с суммами персон")
-except RuntimeError as error:
-    print(error)
+def  main():
+    inputt()
+    greedy()
+
+if __name__ == '__main__':
+    main()
     
-greedy()
 print(res)
