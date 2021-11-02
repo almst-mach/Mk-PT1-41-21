@@ -18,6 +18,7 @@
 #             print(f'участник {i+1} должен {average_bill-arg3[i]}' )
 # calculation_dept(total_bill, amount_of_participants, sums)
 
+<<<<<<< Updated upstream
 def input_sum_of_check():
     while True:
         try:
@@ -29,3 +30,16 @@ def input_sum_of_check():
             continue
 
 print(input_sum_of_check())
+=======
+# def input_sum_of_check():
+#     while True:
+#         try:
+#             sum_of_check = int(input('Enter sum of check: '))
+#             assert sum_of_check > 0, 'Sum must be more than zero!'
+#             return sum_of_check
+#         except:
+#             print('Smth was wrong, try ahain: ')
+#             continue
+
+# print(input_sum_of_check())
+>>>>>>> Stashed changes
