@@ -2,8 +2,7 @@ from decimal import Decimal
 
 while True:
     try:
-        am_bill = Decimal(input("Введите сумму счета:\n")
-                          ).quantize(Decimal("1.00"))
+        am_bill = Decimal(input("Введите сумму счета:\n")).quantize(Decimal("1.00"))
         break
     except:
         print("Некорректный ввод")
