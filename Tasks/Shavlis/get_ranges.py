@@ -12,27 +12,26 @@ while True:
     except:
         print('Данные введены неккоректно')
         continue
-print(l)
 
-def get_ranges(arg):
-    str_result = ''
-    first_number = 0
-    if len(arg) == 1:
-        str_result += f'{arg[0]}'
-    for i in range(1, len(arg)):
-        first_number += 1
-        if arg[i-1] < arg[i] - 1:
-            if first_number == 1 and i == len(arg) - 1:
-                str_result += f'{arg[i-1]}, {arg[i]}'
-            elif first_number == 1:
-                str_result += f'{arg[i-1]}, '
-            elif first_number > 1 and i == len(arg) - 1:
-                str_result += f'{arg[i-first_number]}-{arg[i-1]}, {arg[i]}'
-            elif first_number > 1:
-                str_result += f'{arg[i-first_number]}-{arg[i-1]}, '
-            first_number = 0
-        elif i == len(arg) - 1:
-            str_result += f'{arg[i-first_number]}-{arg[i]}'
-    return str_result
+def get_ranges(a):
+    s = ''
+    b = 0
+    if len(a) == 1:
+        s += f'{a[0]}'
+    for i in range(1, len(a)):
+        b += 1
+        if a[i-1] < a[i] - 1:
+            if b == 1 and i == len(a) - 1:
+                s += f'{a[i-1]}, {a[i]}'
+            elif b == 1:
+                s += f'{a[i-1]}, '
+            elif b > 1 and i == len(a) - 1:
+                s += f'{a[i-b]}-{a[i-1]}, {a[i]}'
+            elif b > 1:
+                s += f'{a[i-b]}-{a[i-1]}, '
+            b = 0
+        elif i == len(a) - 1:
+            s += f'{a[i-b]}-{a[i]}'
+    return s
     
-print(get_ranges(l))
+print('Свернутый список:', get_ranges(l))
